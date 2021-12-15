@@ -1,0 +1,93 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {% trans %}myOrders{% endtrans %}
+{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/orders.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/buttons.css')}}"/>
+    <script src="{{ asset('js/orders.js')}}" defer></script>
+    {% if is_granted('ROLE_ADMIN') %}
+        <script src="{{ asset('js/changeOrderStatus.js')}}" defer></script>
+    {% endif %}
+{% endblock %}
+
+{% block buttons %}
+    <a class="button_route sign_in" href="{{ path('signout') }}">{% trans %}signOut{% endtrans %}</a>
+    {% if is_granted('ROLE_ADMIN') %}
+        <a class="button_route" href="{{ path('users') }}">{% trans %}users{% endtrans %}</a>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <a class="item_menu" href="{{ path('menu') }}">{% trans %}menu{% endtrans %}</a>
+    <a class="item_orders selected" href="{{ path('orders') }}">{% trans %}orders{% endtrans %}</a>
+    <span class="countOrders" id="countOrders">{{ countOrders }}</span>
+    <div class="orders_header">
+        <p class="orders_header_item number_name">{% trans %}number{% endtrans %}</p>
+        <p class="orders_header_item menu_name">{% trans %}menu{% endtrans %}</p>
+        <p class="orders_header_item price_name">{% trans %}price{% endtrans %}</p>
+        <p class="orders_header_item client_name">{% trans %}client{% endtrans %}</p>
+        <p class="orders_header_item address_name">{% trans %}address{% endtrans %}</p>
+        <p class="orders_header_item status_name">{% trans %}status{% endtrans %}</p>
+    </div>
+    {% if countOrders == 0 and not is_granted('ROLE_ADMIN') %}
+        <img class="bird" src="{{ asset('img/bird.jpg') }}" alt="Дооолго грузиться...">
+        <div class="no_orders_message">{% trans %}no_orders_message{% endtrans %}</div>
+    {% else %}
+        <ul class="list_orders">
+            {% for order in orders %}
+                <li class="order" notice="{{ order.notice }}">
+                    <ul class="list_item_order" id="{{ order.id }}">
+                        {% if order.notice == 1 %}
+                            <span class="dagger">×</span>
+                        {% endif %}
+                        <li class="orders_item number_name">#{{ order.number }}</li>
+                        <li class="orders_item menu_name">{{ order.pizza }}</li>
+                        <li class="orders_item price_name">{{ order.price }}р.</li>
+                        <li class="orders_item client_name">{{ order.user }}</li>
+                        <li class="orders_item address_name">{{ order.address }}</li>
+                        <li class="orders_item status_name">
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <select class="status" name="status"  id="status_select" size="1" notice="{{ order.notice }}">
+                                    <option {% if order.status == 1 %}selected="selected"{% endif %} value="1">В очереди</option >
+                                    <option {% if order.status == 2 %}selected="selected"{% endif %} value="2">Готовится</option>
+                                    <option {% if order.status == 3 %}selected="selected"{% endif %} value="3">Доставляется</option>
+                                    <option {% if order.status == 4 %}selected="selected"{% endif %} value="4">Выполнен</option>
+                                </select>
+                            {% else %}
+                                {% if order.status == 1 %}
+                                    В очереди
+                                {% elseif order.status == 2 %}
+                                    Готовится
+                                {% elseif order.status == 3 %}
+                                    Доставляется
+                                {% elseif order.status == 4 %}
+                                    Выполнен
+                                {% endif %}
+                            {% endif %}
+                        </li>
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+        {% if is_granted('ROLE_ADMIN') %}
+            <div class="save_button_block">
+                <button class="save_button">{% trans %}save{% endtrans %}</button>
+            </div>
+            {% block footer %}
+                <div class="button_bg"></div>
+            {% endblock %}
+        {% endif %}
+    {% endif %}
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        let orders = document.querySelectorAll('.order[notice="1"]');
+        for (order of orders) {
+            order.style.position = 'relative';
+            order.style.right = '20px';
+        }
+    </script>
+{% endblock %}

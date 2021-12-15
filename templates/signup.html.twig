@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {% trans %}signUp{% endtrans %}
+{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/form.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/buttons.css')}}"/>
+    <script src="{{ asset('js/signUp.js') }}" defer></script>
+{% endblock %}
+
+{% block buttons %}
+    <a class="button_route sign_in" href="{{ path('signin') }}">{% trans %}signIn{% endtrans %}</a>
+{% endblock %}
+
+{% block content %}
+    {{ form_start(form, {'attr': {'class': 'form', 'onsubmit': "validateForm();return false"}}) }}
+        <h2 class="form_header reg_header">
+            {% trans %}signUp{% endtrans %}
+        </h2>
+        {{ form_widget(form) }}
+    {{ form_end(form) }}
+{% endblock %}

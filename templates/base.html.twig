@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            {% block title %}
+                {% trans %}dolgoPizza{% endtrans %}
+            {% endblock %}
+        </title>
+        <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+        <link rel="stylesheet" href="{{ asset('css/main.css') }}"/>
+        <script src="{{ asset('js/showFlashBox.js') }}" defer></script>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        {% block body %}
+            <header class="header">
+                {% block header %}
+                    <div class="heading">
+                        <a class="main_ref" href="{{ path('menu') }}">
+                            <img class="logo" src="{{ asset('img/logo.png') }}" alt="Кусочек пиццы">
+                            <h1 class="site_name">{% trans %}dolgoPizza{% endtrans %}</h1>
+                        </a>
+                        {% block buttons %}{% endblock %}
+                    </div>
+                {% endblock %}
+            </header>
+            <section>
+                <div class="container">
+                    <div class="flash_box" id="flash_box"></div>
+                    {% block content %}{% endblock %}
+                </div>
+            </section>
+            {% block footer %}{% endblock %}
+        {% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

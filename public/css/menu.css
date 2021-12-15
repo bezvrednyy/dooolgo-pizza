@@ -1,0 +1,94 @@
+.countOrders
+{
+    font: 500 16px Roboto;
+    vertical-align: center;
+    text-align: center;
+    border-radius: 50%;
+    color: #A2A2A2;
+    width: 16px;
+    height: 16px;
+    transition-duration: 1000ms;
+}
+
+.all_pizzas
+{
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.pizza
+{
+    margin-bottom: 60px;
+    max-width: 280px;
+    flex: 0 0 auto;
+}
+
+.pizza_photo
+{
+    width: 280px;
+    height: 280px;
+    transition: 1s;
+}
+
+.pizza_photo:hover
+{
+    transform: scale(1.05);
+}
+
+.pizza_name
+{
+    font: 500 22px Roboto;
+    margin: 10px 0;
+}
+
+.pizza_description
+{
+    color: #595959;
+    margin: 0;
+    height: 60px;
+}
+
+.pizza_footer
+{
+    margin-top: 22px;
+    vertical-align: bottom;
+}
+
+.pizza_price
+{
+    display: inline;
+    font: 500 22px Roboto;
+    line-height: 40px;
+}
+
+.button_pay
+{
+    width: 91px;
+    height: 40px;
+    background: #F2960B;
+    border: 0;
+    border-radius: 10px;
+    float: right;
+    font-size: 18px;
+    color: #FFF;
+    transition-duration: 120ms;
+}
+
+.button_pay:hover
+{
+    background: rgba(242, 150, 11, 0.9);
+    color: #222;
+    cursor: pointer;
+}
+
+.button_pay:focus
+{
+    outline: none;
+}
+
+.clear
+{
+    clear: both;
+}

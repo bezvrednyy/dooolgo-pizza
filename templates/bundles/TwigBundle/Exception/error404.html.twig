@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/errorPage.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/buttons.css') }}"/>
+{% endblock %}
+
+{% block buttons %}
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <a class="button_route sign_in" href="{{ path('signout') }}">{% trans %}signOut{% endtrans %}</a>
+    {% else %}
+        <a class="button_route sign_in" href="{{ path('signin') }}">{% trans %}signIn{% endtrans %}</a>
+        <a class="button_route sign_up" href="{{ path('signup') }}">{% trans %}signUp{% endtrans %}</a>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <img class="bird" src="{{ asset('img/bird.jpg') }}" alt="Дооолго грузиться...">
+    <div class="error_message">{% trans %}error404_message{% endtrans %}</div>
+    <a class="menu_button" href="{{ path('menu') }}">{% trans %}go to menu{% endtrans %}</a>
+{% endblock %}

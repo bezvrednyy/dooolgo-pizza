@@ -1,0 +1,23 @@
+FCS: FCS
+email: Email
+password: Password
+address: Address
+signUp: Sign up
+signIn: Sign in
+signOut: Sign out
+menu: Menu
+orders: Orders
+buy: Buy
+number: Number
+price: Price
+client: Client
+status: Status
+myOrders: My orders
+users: Пользователи
+dolgoPizza: Dolgo pizza
+role: Role
+save: Save
+go to menu: Go to menu
+error403_message: Oops, access denied
+error404_message: Page not found, or not yet created
+no_orders_message: There's nothing here yet :(

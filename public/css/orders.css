@@ -1,0 +1,190 @@
+.orders_header_item
+{
+    font: 600 22px/1 Roboto;
+    list-style-type: none;
+    display: inline-block;
+    margin: 0 40px 0 0;
+    line-height: 45px;
+}
+
+.countOrders
+{
+    font: 500 16px Roboto;
+    vertical-align: center;
+    text-align: center;
+    border-radius: 50%;
+    color: #A2A2A2;
+    width: 16px;
+    height: 16px;
+    transition-duration: 1000ms;
+}
+
+.button_bg
+{
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    background: linear-gradient(rgba(255,255,255, 0), rgba(255, 177, 33, 0.3));
+}
+
+.save_button_block
+{
+    height: 40px;
+    width: 169px;
+    margin: 0 auto;
+}
+
+.save_button
+{
+    display: block;
+    position: fixed;
+    bottom: 15px;
+    z-index: 2;
+    transition: 0.12s;
+    width: 169px;
+    background: rgba(242, 150, 11, 1);
+    color: #FFF;
+    height: 40px;
+    border: 1px solid #F2960B;
+    border-radius: 10px;
+    font: 400 18px Roboto;
+    text-align: center;
+    text-decoration: none;
+}
+
+.save_button:hover
+{
+    background: rgba(242, 150, 11, 0.9);
+    cursor: pointer;
+}
+
+.save_button:active
+{
+    background: rgba(242, 150, 12, 0.2);
+}
+
+.save_button:focus
+{
+    outline: none;
+}
+
+.orders_item
+{
+    list-style-type: none;
+    font: 400 22px Roboto;
+    margin-right: 40px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: top;
+}
+
+.number_name
+{
+    width: 80px;
+}
+
+.menu_name
+{
+    width: 220px;
+}
+
+.price_name
+{
+    width: 75px;
+}
+
+.client_name
+{
+    width: 225px;
+}
+
+.address_name
+{
+    width: 260px;
+}
+
+.status_name
+{
+    width: 170px;
+    margin-right: 0;
+}
+
+.status
+{
+    width: 170px;
+    border: none;
+    font: 400 22px Roboto;
+    transition: all 1000ms ease 0s;
+}
+
+.status:focus
+{
+    outline: none;
+}
+
+.orders_header
+{
+    margin: 35px 0;
+}
+
+.orders_header:before
+{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 45px;
+    background: rgba(236, 146, 12, 0.3);
+}
+
+.bird
+{
+    display: block;
+    margin: 10% calc(80%/2) 0 calc(80%/2);
+    max-width: 16%;
+}
+
+.no_orders_message
+{
+    font: 500 22px Roboto;
+    text-align: center;
+    margin: 10px 0 30px 0;
+}
+
+.list_orders
+{
+    margin: 0;
+    padding: 0;
+}
+
+.order
+{
+    list-style-type: none;
+    margin-bottom: 10px;
+    transition: all 1000ms ease 0s;
+}
+
+.list_item_order
+{
+    padding: 0;
+}
+
+.dagger
+{
+    display: inline-block;
+    position: relative;
+    bottom: 7px;
+    right: 7px;
+    color: #A2A2A2;
+    font-size: 30px;
+}
+
+.dagger:hover
+{
+    color: #595959;
+    cursor: pointer;
+}

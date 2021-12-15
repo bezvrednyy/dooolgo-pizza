@@ -1,0 +1,39 @@
+.bird
+{
+    display: block;
+    margin: 10% calc(80%/2) 0 calc(80%/2);
+    max-width: 16%;
+}
+
+.error_message
+{
+    font: 500 22px Roboto;
+    text-align: center;
+    margin: 10px 0 30px 0;
+}
+
+.menu_button
+{
+    display: block;
+    margin: 0 auto;
+    max-width: 300px;
+    padding: 17px 45px;
+    font: 400 16px Roboto;
+    line-height: 1.2;
+    color: #ff6900;
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid #ff6900;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+    outline: none;
+    cursor: pointer;
+    overflow: visible;
+    transition: all .1s ease;
+}
+
+.menu_button:hover {
+    border-color: #d96334;
+    color: #d96334;
+}

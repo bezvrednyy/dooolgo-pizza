@@ -1,0 +1,6 @@
+email.error: This value is not a valid email address
+password.error: The password must consist of at least eight Latin letters and numbers
+name.error: This value is not a valid FCS
+address.error: "Use the format: street, house, entrance, floor, apartment"
+
+

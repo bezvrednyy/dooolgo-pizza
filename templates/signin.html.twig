@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {% trans %}signIn{% endtrans %}
+{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/form.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/buttons.css')}}"/>
+{% endblock %}
+
+{% block buttons %}
+    <a class="button_route sign_up" href="{{ path('signup') }}">{% trans %}signUp{% endtrans %}</a>
+{% endblock %}
+
+{% block content %}
+    <form class="form" method="post">
+        <h2 class="form_header entrance_header">
+            {% trans %}signIn{% endtrans %}
+        </h2>
+        <input class="field" id="user_email" type="email" name="email" value="{{ last_username }}" placeholder={% trans %}email{% endtrans %} maxlength="255" required autofocus>
+        <input class="field" id="user_password" type="password" name="password" placeholder={% trans %}password{% endtrans %} maxlength="255" required>
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+        {#
+            Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+            See https://symfony.com/doc/current/security/remember_me.html
+
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" name="_remember_me"> Remember me
+                </label>
+            </div>
+        #}
+
+        <button class="btn btn-lg btn-primary submit" type="submit">
+            {% trans %}signIn{% endtrans %}
+        </button>
+        {% if error %}
+            <div class="error" id="error">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {# Здесь 'security' означает, что переводы нужно искать в файле с доменом 'security'  #}
+{% endif %}
+</form>
+{% endblock %}

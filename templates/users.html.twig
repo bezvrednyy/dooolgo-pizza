@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {% trans %}users{% endtrans %}
+{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/buttons.css')}}"/>
+    <link rel="stylesheet" href="{{ asset('css/users.css') }}"/>
+{% endblock %}
+
+{% block buttons %}
+    <a class="button_route sign_in" href="{{ path('signout') }}">{% trans %}signOut{% endtrans %}</a>
+{% endblock %}
+
+{% block content %}
+    <div class="users_header">
+        <p class="users_header_item client">{% trans %}FCS{% endtrans %}</p>
+        <p class="users_header_item email">{% trans %}email{% endtrans %}</p>
+        <p class="users_header_item password">{% trans %}role{% endtrans %}</p>
+        <p class="users_header_item address">{% trans %}address{% endtrans %}</p>
+    </div>
+    <ul class="list_users">
+        {% for user in users %}
+            <li class="user">
+                <ul class="list_item_user">
+                    <li class="users_item client">{{ user.name }}</li>
+                    <li class="users_item email">{{ user.email }}</li>
+                    <li class="users_item password">{{ user.roles.0 }}</li>
+                    <li class="users_item address">{{ user.address }}</li>
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+

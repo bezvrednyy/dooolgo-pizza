@@ -1,0 +1,23 @@
+FCS: ФИО
+email: Почта
+password: Пароль
+address: Адрес
+signUp: Регистрация
+signIn: Вход
+signOut: Выход
+menu: Меню
+orders: Заказы
+buy: Купить
+number: Номер
+price: Цена
+client: Клиент
+status: Статус
+myOrders: Мои заказы
+users: Пользователи
+dolgoPizza: Долго пицца
+role: Роль
+save: Сохранить
+go to menu: Перейти в меню
+error403_message: Упс, доступ закрыт
+error404_message: Страница не найдена, либо ещё не создана
+no_orders_message: Пока что здесь ничего нет :(

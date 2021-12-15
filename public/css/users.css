@@ -1,0 +1,74 @@
+.users_header_item
+{
+    font: 600 22px/1 Roboto;
+    list-style-type: none;
+    display: inline-block;
+    margin: 0 40px 0 0;
+    line-height: 45px;
+}
+
+.users_item
+{
+    list-style-type: none;
+    font: 400 22px Roboto;
+    margin-right: 40px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: top;
+}
+
+.client
+{
+    width: 300px;
+}
+
+.email
+{
+    width: 240px;
+}
+
+.password
+{
+    width: 240px;
+}
+
+.address
+{
+    width: 350px;
+    margin-right: 0;
+}
+
+
+.users_header
+{
+    margin: 35px 0;
+}
+
+.users_header:before
+{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 45px;
+    background: rgba(236, 146, 12, 0.3);
+}
+
+.list_users
+{
+    margin: 0;
+    padding: 0;
+}
+
+.user
+{
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+
+.list_item_user
+{
+    padding: 0;
+}

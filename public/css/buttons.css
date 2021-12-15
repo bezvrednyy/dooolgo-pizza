@@ -1,0 +1,51 @@
+.item_menu, .item_orders
+{
+    transition: 0.12s;
+    text-decoration: none;
+    color: #000;
+    font: 500 16px Roboto;
+    margin-right: 18px;
+    margin-left: 1px;
+}
+
+.item_orders
+{
+    margin-right: 5px;
+}
+
+.item_menu:hover, .item_orders:hover
+{
+    color: #F2960B;
+}
+
+.selected
+{
+    border-bottom: 3px solid #F2960B;
+}
+
+.button_route
+{
+    transition: 0.12s;
+    width: 169px;
+    background: #FFF;
+    color: #000;
+    height: 40px;
+    border: 1px solid #F2960B;
+    border-radius: 10px;
+    float: right;
+    margin-right: 22px;
+    font: 400 18px Roboto;
+    text-align: center;
+    text-decoration: none;
+    line-height: 41px;
+}
+.sign_in
+{
+    width: 91px;
+}
+
+.button_route:hover
+{
+    background: #F2960B;
+    color: #FFF;
+}

@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {% trans %}dolgoPizza{% endtrans %}
+{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/menu.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/buttons.css')}}"/>
+    <script src="{{ asset('js/menu.js') }}" defer></script>
+{% endblock %}
+
+{% block buttons %}
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <a class="button_route sign_in" href="{{ path('signout') }}">{% trans %}signOut{% endtrans %}</a>
+        {% if is_granted('ROLE_ADMIN') %}
+            <a class="button_route" href="{{ path('users') }}">{% trans %}users{% endtrans %}</a>
+        {% endif %}
+    {% else %}
+        <a class="button_route sign_in" href="{{ path('signin') }}">{% trans %}signIn{% endtrans %}</a>
+        <a class="button_route sign_up" href="{{ path('signup') }}">{% trans %}signUp{% endtrans %}</a>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <a class="item_menu selected" href="{{ path('menu') }}">{% trans %}menu{% endtrans %}</a>
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <a class="item_orders" href="{{ path('orders') }}">{% trans %}orders{% endtrans %}</a>
+        <span class="countOrders" id="countOrders">{{ countOrders }}</span>
+    {% endif %}
+    <div class="all_pizzas">
+        {% for pizza in menu %}
+            <div class="pizza">
+                <img class="pizza_photo" src="{{ pizza.img }}" alt={{ pizza.name }}>
+                <h2 class="pizza_name">{{ pizza.name }}</h2>
+                <p class="pizza_description">{{ pizza.description }}</p>
+                <div class="pizza_footer">
+                    <p class="pizza_price">от {{ pizza.price }}р.</p>
+                    <button name="{{ pizza.id }}" class="button_pay" id="button">{% trans %}buy{% endtrans %}</button>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
